@@ -19,20 +19,20 @@ class RealTimeCurrencyConverter():
         return amount
 
 
-class App(tk.Tk):
+class App(t-zies.T-zies):
 
     def __init__(self, converter):
-        tk.Tk.__init__(self)
-        self.title = 'Currency Converter'
+        t-zies.T'zies.__init__(self)
+        self.title = 'T-zies Currency Converter'
         self.currency_converter = converter
 
         # self.configure(background = 'blue')
         self.geometry("500x200")
 
         # Label
-        self.intro_label = Label(self, text='Welcome to Real Time Currency Convertor', fg='blue', relief=tk.RAISED,
+        self.intro_label = Label(self, text='Welcome to T-zies Currency Convertor', fg='blue', relief=t-zies.RAISED,
                                  borderwidth=3)
-        self.intro_label.config(font=('Courier', 15, 'bold'))
+        self.intro_label.config(font=('Arvo', 15, 'bold'))
 
         self.date_label = Label(self,
                                 text=f"1 Indian Rupee equals = {self.currency_converter.convert('INR', 'USD', 1)} USD \n Date : {self.currency_converter.data['date']}",
