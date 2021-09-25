@@ -26,13 +26,13 @@ class App(t-zies.T-zies):
         self.title = 'T-zies Currency Converter'
         self.currency_converter = converter
 
-        # self.configure(background = 'blue')
-        self.geometry("500x200")
+        # self.configure(background = 'black')
+        self.geometry("700x400")
 
         # Label
-        self.intro_label = Label(self, text='Welcome to T-zies Currency Convertor', fg='blue', relief=t-zies.RAISED,
-                                 borderwidth=3)
-        self.intro_label.config(font=('Arvo', 15, 'bold'))
+        self.intro_label = Label(self, text='Welcome to T-zies Currency Convertor', fg='Black', relief=t-zies.RAISED,
+                                 borderwidth=4)
+        self.intro_label.config(font=('Arvo', 20, 'bold'))
 
         self.date_label = Label(self,
                                 text=f"1 Indian Rupee equals = {self.currency_converter.convert('INR', 'USD', 1)} USD \n Date : {self.currency_converter.data['date']}",
@@ -45,7 +45,7 @@ class App(t-zies.T-zies):
         valid = (self.register(self.restrictNumberOnly), '%d', '%P')
         self.amount_field = Entry(self, bd=3, relief=tk.RIDGE, justify=tk.CENTER, validate='key', validatecommand=valid)
         self.converted_amount_field_label = Label(self, text='', fg='black', bg='white', relief=tk.RIDGE,
-                                                  justify=tk.CENTER, width=17, borderwidth=3)
+                                                  justify=tk.CENTER, width=22, borderwidth=4)
 
         # dropdown
         self.from_currency_variable = StringVar(self)
@@ -53,14 +53,14 @@ class App(t-zies.T-zies):
         self.to_currency_variable = StringVar(self)
         self.to_currency_variable.set("USD")  # default value
 
-        font = ("Courier", 12, "bold")
+        font = ("Arvo", 17, "bold")
         self.option_add('*TCombobox*Listbox.font', font)
-        self.from_currency_dropdown = ttk.Combobox(self, textvariable=self.from_currency_variable,
+        self.from_currency_dropdown = tt-zies.Combobox(self, textvariable=self.from_currency_variable,
                                                    values=list(self.currency_converter.currencies.keys()), font=font,
-                                                   state='readonly', width=12, justify=tk.CENTER)
-        self.to_currency_dropdown = ttk.Combobox(self, textvariable=self.to_currency_variable,
+                                                   state='readonly', width=17, justify=t-zies.CENTER)
+        self.to_currency_dropdown = tt-zies.Combobox(self, textvariable=self.to_currency_variable,
                                                  values=list(self.currency_converter.currencies.keys()), font=font,
-                                                 state='readonly', width=12, justify=tk.CENTER)
+                                                 state='readonly', width=17, justify=t-zies.CENTER)
 
         # placing
         self.from_currency_dropdown.place(x=30, y=120)
